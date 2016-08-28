@@ -7,8 +7,21 @@
 </head>
   <body>
     <script src="/js/jquery-3.1.0.min.js"></script>
+    <script src="/js/moment.js"></script>
     <script src="/js/socket_io.js"></script>
-    <script src="js/app.js"></script>
 
+
+    <h1>My chat app!</h1>
+
+    <div id='message-board' class="messages-display">
+
+    </div>
+
+    <form id='message-form' class="chat-ui" action="index.html" method="post">
+      <label for="chat-input" >Type text here</label>
+      <input type="text" name="message"  id='message-input' value="">
+      <input type="submit">
+    </form>
+    <script src="js/app.js"></script>
   </body>
 </html>

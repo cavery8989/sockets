@@ -11,11 +11,13 @@ io.on('connection', function (socket) {
 
   socket.on('message', function (message) {
     console.log('Message Recieved', message.text);
-    socket.broadcast.emit('message', message);
+    message.timestamp = Date.now();
+    io.sockets.emit('message', message);
   });
 
   socket.emit('message', {
-    text: 'Welcome to the chat application'
+    text: 'Welcome to the chat application',
+    timestamp: Date.now()
   });
 });
 
